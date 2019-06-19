@@ -1,0 +1,273 @@
+<html>
+<head>
+<style>
+body { 
+background-color : poo;
+}
+table.table1 {
+border: 1px solid yellow;
+background-color : indianred;
+
+}
+
+table:hover {background-color: #ffcc00;}
+
+table.table2 {
+border: 1px solid yellow;
+background-color : indianred;
+width : 50px;
+}
+table:hover {background-color: #ffcc00;}
+
+td {
+	vertical-align: top;
+}
+
+button.rev {
+background-color : #ffcc00;
+}
+
+button.jay {
+background-color :silver;
+}
+
+button.flash { 
+background-color : indianred;
+}
+
+</style>
+</head>
+<body background="https://media.moddb.com/images/games/1/53/52043/Background.jpg">
+<center>
+<button id="img1" class="rev">
+<div id="skin1">
+</div>
+</button>
+<button id="img2" class="jay">
+<div id="skin2">
+</div>
+</button>
+<button id="img3" class="flash">
+<div id="skin3">
+</div>
+</button>
+</center>
+<table id ="tb1" class="table1">
+	<tr>
+		<td>
+		Name
+		</td>
+		<td>
+		Superhero Name
+		</td>
+		<td>
+		Species
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="name1">
+			</div>
+		</td>
+		<td>
+			<div id="name2">
+			</div>
+		</td>
+		<td>
+			<div id="species">
+			</div>
+		</td>
+	</tr>
+</table>
+
+<table id="tb2" class="table1">
+	<tr>
+		<td>
+		Strength
+		</td>
+		<td>
+		Ability
+		</td>
+		<td>
+		Health
+		</td>
+		<td>
+		Defense
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="strength">
+			</div>
+		</td>
+		<td>
+			<div id="ability">
+			</div>
+		</td>
+		<td>
+			<div id="health">
+			</div>
+		</td>
+		<td>
+			<div id="defense">
+			</div>
+		</td>
+	</tr>
+</table>
+<br>
+<img id="myPic" align="right" width="374.50px" height="557px" src="https://vignette.wikia.nocookie.net/injusticegodsamongus/images/5/58/Injustice2-THE-FLASH-wallpaper-MOBILE-80.jpg/revision/latest?cb=20170918193840">
+<br>
+<table id="tb3" class="table2">
+<tr>
+<td>
+Specials
+</td>
+<td>
+Combos
+</td>
+<td>
+Normals
+</td>
+</tr>
+<tr>
+<td>
+<div id="specials">
+</div>
+</td>
+<td>
+<div id="combos">
+</div>
+</td>
+<td>
+<div id="normals">
+</div>
+</td>
+
+</body>
+
+<script>
+
+function doImg1() {
+document.getElementById("myPic").src = "https://vignette.wikia.nocookie.net/injusticegodsamongus/images/4/45/Injustice2-REVERSE-FLASH-wallpaper-MOBILE-72.jpg/revision/latest?cb=20170916182718";
+document.getElementById("name1").innerHTML = myVillain.name.real;
+document.getElementById("name2").innerHTML = myVillain.name.fake;
+document.getElementById("species").innerHTML = myVillain.species;
+}
+function doImg2() {
+document.getElementById("myPic").src = "https://vignette.wikia.nocookie.net/injusticegodsamongus/images/0/09/Injustice2-JAYGARRICK-wallpaper-mobile-91.jpg/revision/latest?cb=20170916182422";
+document.getElementById("name1").innerHTML = myHero.name.real;
+document.getElementById("name2").innerHTML = myHero.name.fake;
+document.getElementById("species").innerHTML = myHero.species;
+}
+function doImg3() {
+document.getElementById("myPic").src = "https://vignette.wikia.nocookie.net/injusticegodsamongus/images/5/58/Injustice2-THE-FLASH-wallpaper-MOBILE-80.jpg/revision/latest?cb=20170918193840";
+document.getElementById("name1").innerHTML = myCharacter.name.real;
+document.getElementById("name2").innerHTML = myCharacter.name.fake;
+document.getElementById("species").innerHTML = myCharacter.species;
+}
+
+var myCharacter = {};
+myCharacter.name = {};
+myCharacter.name.real = "Barry Allen";
+myCharacter.name.fake = "The Flash";
+myCharacter.species = "Human";
+myCharacter.stats = {};
+myCharacter.stats.strength = "1100";
+myCharacter.stats.ability = "1100";
+myCharacter.stats.defense = "950";
+myCharacter.stats.health = "1000";
+myCharacter.skins = [];
+myCharacter.skins.push ( "Reverse Flash");
+myCharacter.skins.push ( "Jay Garrick");
+myCharacter.skins.push ( "The Flash");
+myCharacter.attacks = {};
+myCharacter.attacks.specials = [];
+myCharacter.attacks.specials.push ( "Lightning Kick");
+myCharacter.attacks.specials.push ( "Fists of Fury");
+myCharacter.attacks.specials.push ( "On Your Mark");
+myCharacter.attacks.specials.push ( "Quantum Tunneling");
+myCharacter.attacks.specials.push ( "Sonic Lift");
+myCharacter.attacks.specials.push ( "Sonic Pound");
+myCharacter.attacks.combos = [];
+myCharacter.attacks.combos.push ( "Bolt of Lightning");
+myCharacter.attacks.combos.push ( "Forced Acceleration");
+myCharacter.attacks.combos.push ( "Greased Lightning");
+myCharacter.attacks.combos.push ( "Hot Pursuit");
+myCharacter.attacks.combos.push ( "In a Jiff");
+myCharacter.attacks.combos.push ( "Lightspeed");
+myCharacter.attacks.combos.push ( "Natural Disaster");
+myCharacter.attacks.combos.push ( "On the Double");
+myCharacter.attacks.combos.push ( "Quick Steps");
+myCharacter.attacks.combos.push ( "Roller Coaster");
+myCharacter.attacks.combos.push ( "Speed Force");
+myCharacter.attacks.combos.push ( "Stop Motion");
+myCharacter.attacks.combos.push ( "Super Speed");
+myCharacter.attacks.combos.push ( "Terminal Velocity");
+myCharacter.attacks.normals = [];
+myCharacter.attacks.normals.push ("Away Air Escape");
+myCharacter.attacks.normals.push ("Back Throw");
+myCharacter.attacks.normals.push ("Bounce Cancel");
+myCharacter.attacks.normals.push ("Fast Feet");
+myCharacter.attacks.normals.push ("Flashy Kick");
+myCharacter.attacks.normals.push ("Forward Throw");
+myCharacter.attacks.normals.push ("Jumping Heavy Attack");
+myCharacter.attacks.normals.push ("Jumping Light Attack");
+myCharacter.attacks.normals.push ("Jumping Medium Attack");
+myCharacter.attacks.normals.push ("Lightning Strikes");
+myCharacter.attacks.normals.push ("Lunging Elbow");
+myCharacter.attacks.normals.push ("Overhead Bounce Cancel");
+myCharacter.attacks.normals.push ("Roll Escape");
+myCharacter.attacks.normals.push ("Side Chop");
+myCharacter.attacks.normals.push ("Spin Cycle");
+myCharacter.attacks.normals.push ("Spinning Backhand");
+myCharacter.attacks.normals.push ("Up Air Escape");
+myCharacter.attacks.normals.push ("Zip Kick");
+
+var myVillain = {};
+myVillain.name = {};
+myVillain.name.real = "Eobard Thawne";
+myVillain.name.fake = "Reverse Flash";
+myVillain.species = "Human";
+
+var myHero = {};
+myHero.name = {};
+myHero.name.real = "Jay Garrick";
+myHero.name.fake = "Jay Garrick";
+myHero.species = "Human";
+
+
+var tName = myCharacter.name;
+var tStats = myCharacter.stats;
+var tSpecial
+
+document.getElementById("name1").innerHTML = tName.real;
+document.getElementById("name2").innerHTML = tName.fake;
+document.getElementById("species").innerHTML = myCharacter.species;
+document.getElementById("strength").innerHTML = tStats.strength;
+document.getElementById("ability").innerHTML = tStats.ability;
+document.getElementById("health").innerHTML = tStats.health;
+document.getElementById("defense").innerHTML = tStats.defense;
+document.getElementById("specials").innerHTML = myCharacter.attacks.specials;
+document.getElementById("combos").innerHTML = myCharacter.attacks.combos;
+document.getElementById("normals").innerHTML = myCharacter.attacks.normals;
+document.getElementById("skin1").innerHTML = myCharacter.skins[0];
+document.getElementById("skin2").innerHTML = myCharacter.skins[1];
+document.getElementById("skin3").innerHTML = myCharacter.skins[2];
+
+document.getElementById("img1").addEventListener("click",doImg1);
+document.getElementById("img2").addEventListener("click",doImg2);
+document.getElementById("img3").addEventListener("click",doImg3);
+
+
+console.log(myCharacter);
+console.log(myHero);
+console.log(myVillain);
+
+
+
+
+
+
+</script>
+
+	

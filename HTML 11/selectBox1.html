@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>
+		Ricflix
+		</title>
+		<style>
+			button {
+				color: black;
+				background-color: red;
+				border: 1px solid red;
+			}
+			
+			select {
+				color: black;
+				background-color: red;
+				border: 1px solid red;
+			}
+			
+			body {
+				background-color: black;
+				color: red;
+			}
+			
+			h1 {
+				color: red;
+				text-align: center;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			h3 {
+				color: red;
+				text-align: center;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			
+
+		</style>
+	</head>
+	<body>
+		
+		<h1>
+			Ricflix
+		</h1>
+		
+		<h3>
+			Welcome to Ricflix! We have a very limited selection of shows, only 2 seasons for each show and 6 episodes each. If you would like a better show viewing experience, we would recommend Netflix.
+		</h3>
+		
+		<select id='show'>
+			<option default value='Show'>Show</option>
+			<option value='Game of Thrones'>Game of Thrones</option>
+			<option value='The Simpsons'>The Simpsons</option>
+			<option value='Riverdale'>Riverdale</option>
+			<option value='Arrow'>Arrow</option>
+			<option value='Breaking Bad'>Breaking Bad</option>
+			<option value='Brooklyn Nine-Nine'>Brooklyn Nine-Nine</option>
+			<option value='The Walking Dead'>The Walking Dead</option>
+			<option value='Daredevil'>Daredevil</option>
+			<option value='Narcos'>Narcos</option>
+		</select>
+		<select id='season'>
+			<option default value='Season 1'>Season 1</option>
+			<option value='Season 2'>Season 2</option>
+		</select>
+		<select id='episode'>
+			<option default value='Episode 1'>Episode 1</option>
+			<option default value='Episode 2'>Episode 2</option>
+			<option default value='Episode 3'>Episode 3</option>
+			<option default value='Episode 4'>Episode 4</option>
+			<option default value='Episode 5'>Episode 5</option>
+			<option default value='Episode 6'>Episode 6</option>
+		</select>
+		<button id="submit">Watch!</button>
+		<br>
+		<br>
+		<br>
+		<div id="output">
+		</div>
+	
+	
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$("#show").on("change",doShow);
+		$("#season").on("change",doSeason);
+		$("#episode").on("change",doEpisode);
+		$("#submit").on("click",doWatch);
+	
+		function doShow(evt) {
+			 var show = $(this).children("option:selected").val();
+			console.log(show);
+		}
+		function doSeason(evt) {
+			var season = $(this).children("option:selected").val();
+			console.log(season);
+		}
+		function doEpisode(evt) {
+			var episode = $(this).children("option:selected").val();
+			console.log(episode);
+		}
+	
+		function doWatch() {
+		$("#output").html("You have decided to watch " + show + ", " + season + ", " + episode + "." )
+		
+		
+		}
+		
+	
+	
+	
+	
+	
+	
+	
+	</script>

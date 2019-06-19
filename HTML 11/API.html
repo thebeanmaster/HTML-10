@@ -1,0 +1,156 @@
+<head>
+<style>
+table {
+	border: 1px solid green;
+}
+
+
+
+</style>
+</head>
+<body>
+<div id="locData">
+	<table id="table">
+		<tr>
+			<td>
+			Country
+			</td>
+			<td id="country">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Province
+			</td>
+			<td id="prov">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			City
+			</td>
+			<td id="city">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Longitude
+			</td>
+			<td id="lon">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Latitude
+			</td>
+			<td id="lat">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Local Time
+			</td>
+			<td id="time">
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="wetData">
+	<table id="wetter">
+		<tr>
+			<td>
+			Temperature(C)
+			</td>
+			<td id="tempc">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Feels Like(C)
+			</td>
+			<td id="feelc">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Temperature(F)
+			</td>
+			<td id="tempf">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Feels Like(F)
+			</td>
+			<td id="feelf">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Gust Speed
+			</td>
+			<td id="gust">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Humidity
+			</td>
+			<td id="humid">
+			</td>
+		</tr>
+
+
+
+
+
+	</table>
+</div>
+Enter Your City:<input id="myInput">
+<button id="cheese">Submit</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>	
+<script>
+var weather;
+//var yellow = setInterval(pee, 1000);
+function pee() {
+var input = document.getElementById("myInput").value;
+
+var test = "http://api.apixu.com/v1/current.json?key=096a8ba6cc08472eb3c183842192404&q=" + input;
+
+$.ajax({
+  url: test,
+  success: function(response) {
+    console.log("response:");
+    console.log(response);
+    weather = response; 
+
+    console.log(weather.location.name)
+	console.log(weather.location.region)
+	document.getElementById("country").innerHTML = weather.location.country;
+	document.getElementById("prov").innerHTML = weather.location.region;
+	document.getElementById("city").innerHTML = weather.location.name;
+	document.getElementById("lon").innerHTML = weather.location.lon;
+	document.getElementById("lat").innerHTML = weather.location.lat;
+	document.getElementById("time").innerHTML = weather.location.localtime;
+	document.getElementById("tempc").innerHTML = weather.current.temp_c;
+	document.getElementById("feelc").innerHTML = weather.current.feelslike_c;
+	document.getElementById("tempf").innerHTML = weather.current.temp_f;
+	document.getElementById("feelf").innerHTML = weather.current.feelslike_f;
+	document.getElementById("gust").innerHTML = weather.current.gust_kph;
+	document.getElementById("humid").innerHTML = weather.current.humidity;
+  },
+  error: function(response,status,exception) {
+  	console.log(response);
+    console.log(status);
+    console.log(exception)
+  }
+}
+)
+}
+document.getElementById("cheese").addEventListener("click",pee);
+console.log("Display the weather");
+console.log(weather);
+</script>

@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>
+Map
+</title>
+<style>
+
+table, tr, td {
+
+	background-image: linear-gradient(#0099cc, aqua);
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+</body>
+<script>
+
+
+var myArray = [
+{
+	name : "Khavin's Bog",
+	terrain : "Swamp",
+	enemy : "Evil Midgets",
+	quest : "Slay Da'Niel the Short",
+},
+{
+	name : "Dungeon of Whorm",
+	terrain : "Cavern",
+	enemy : "SheEp",
+	quest : "Slay Whorm, the SheEp Master",
+},
+{
+	name : "Hunter's Base",
+	terrain : "Smelly Swamp",
+	enemy : "Living Fungus",
+	quest : "Prevent Hunter the Disgusting from touching you",
+},
+{
+	name : "Fiery Floor",
+	terrain : "Magma Geysers",
+	enemy : "Yeetus'd Fetuses",
+	quest : "Defeat the Mad Yeeter",
+},
+{
+	name : "Trench of 1000 Souls",
+	terrain : "Underwater",
+	enemy : "Angry Fishies",
+	quest : "Kill Gorhdop, the Big Anrgy Fish",
+},
+{
+	name : "Guo's Kingdom",
+	terrain : "Castle",
+	enemy : "Chickens",
+	quest : "Defeat Lord Guo to save Chicky",
+}
+]
+document.writeln("<table>");
+for (var i = 0 ; i < myArray.length; i++) {
+	var output = "";
+	output += "<tr>"
+	output += "<td>" + myArray[i].name + "</td>";
+	output += "<td>" + myArray[i].terrain + "</td>";
+	output += "<td>" + myArray[i].enemy + "</td>";
+	output += "<td>" + myArray[i].quest + "</td>";
+	output += "</tr>";
+	document.writeln(output);
+}
+document.writeln("</table>");
+
+var packagedOBJ = JSON.stringify(myArray);
+
+
+var unpackedOBJ = JSON.parse(packagedOBJ);
+
+console.log(unpackedOBJ);
+console.log(packagedOBJ);
+
+localStorage.setItem("ArrayPacked",packagedOBJ);
+localStorage.setItem("ArrayUnpacked",unpackedOBJ);
+
+
+</script>

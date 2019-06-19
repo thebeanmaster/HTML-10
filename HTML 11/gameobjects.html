@@ -1,0 +1,120 @@
+<head>
+    <title>Game Assignment</title>
+    <script>
+		var character  = {};
+			character.name = "Conan";
+			character.stats = {};
+			character.stats.class = "Fighter";
+			character.stats.THACO = 20;
+			character.stats.AC = 2;
+			character.stats.HP = 15;
+			character.weaponstats = {};
+			character.weaponstats.weapon = "Sword";
+			character.weaponstats.enchant = 1;
+			character.weaponstats.damage = 8;
+		
+		var monster = {};
+			monster.name = "Orgo the Orc";
+			monster.stats = {};
+			monster.stats.THACO = 20;
+			monster.stats.AC = 4;
+			monster.stats.HP = 20;
+			monster.weaponstats = {};
+			monster.weaponstats.weapon = "Mace"
+			monster.weaponstats.damage = 10;
+       
+       
+       
+        
+		console.log(character);
+		console.log(monster);
+        function display() {
+            // This function should display the current hp of the character and the monster
+        		// Output should be displayed in the "message" ID DIV element
+			document.getElementById("mhealth").innerHTML = monster.stats.HP;
+			document.getElementById("chealth").innerHTML = character.stats.HP;
+		}
+		
+        
+        function isHit() {
+            // checks to see if the character hits the monster
+            // generate a random number form 1 to 20
+            // number need to score a hit is: THAC0 - AC - weaponEnchant
+            // successful hit returns true
+            // unsuccessful hit returns false
+            var ranNum = Math.floor(Math.random() * 20) +1;
+			tarNum = monster.stats.THACO-monster.stats.AC-character.weaponstats.enchant;
+			
+			if ( ranNum >= tarNum ) {
+			return true;
+			}
+			else {
+			return false;
+			}
+			
+        }
+        
+        function charDamage(base,enchants) {
+            // determines damage done to opponent
+            // damage is a random number from 1 to base damage
+            // damage is increased by any weaponEnchants
+            // return value is damage done
+			var ranNum2 = Math.floor(Math.random() * base) +1 + enchants;
+			
+			
+			
+			return ranNum2;
+        
+        }
+        
+        function procDamage(currHP,damage) {
+            // calculate the remaining.
+            // remaining hp is calculated as the currHP - damage
+            // return value is the remaining HP
+			monster.stats.HP = monster.stats.HP - damage;
+
+			if (monster.stats.HP <= 0) {
+			//document.getElementById("message").innerHTML ="YOU WIN";
+			
+			
+		}
+        
+        }
+        
+        function attack() {
+            // processes an attack
+            // checks to see if the character hits
+            // calculates damage using the charDamage function.  
+            // monster hp remaining is calculated using the procDamage function
+            // updates the display using the display function
+			
+			var checkHit = isHit();
+			if ( checkHit == true) {
+				// calculate damage
+				
+				damage = charDamage(character.weaponstats.damage,character.weaponstats.enchant);
+				procDamage( monster.stats.HP,damage);
+			}
+			
+			display();
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="message"></div>
+	
+	<span id="monsterName">Monster</span>
+	HP:<div id="mhealth">20</div>
+	
+	<span id="charName">Character</span>
+	HP:<div id="chealth">15</div>
+	
+    <button id="myButton" type="button">Attack with Sword</button>
+</body>
+<script>
+    document.getElementById("myButton").addEventListener("click",attack);
+	
+	document.getElementById("monsterName").innerText = monster.name;
+	document.getElementById("charName").innerText = character.name;
+</script>

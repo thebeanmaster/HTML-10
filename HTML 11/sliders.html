@@ -1,0 +1,93 @@
+<head>
+<style>
+h1 { 
+	color: red;
+}
+
+h4 { 
+	color: red;
+}
+
+.range { 
+		width: 90%;
+		border: 1px solid red;
+}
+
+
+
+.tony {
+	-webkit-appearance: none;
+	border-radius: 5px;
+	height: 25px;
+}
+
+
+
+.tony::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: #ff66cc;
+	cursor: pointer;
+}
+
+
+
+</style>
+</head>
+<body>
+<h1>Answer All on a Scale From 1-10</h1>
+<div class="range">
+	<h4>Do you like school?</h4>
+	<input type="range" min="1" max="10" id="range1">
+	<h4>Do you like this class?</h4>
+	<input type="range" min="1" max="10" id="range2">
+	<h4>Do you like Tony Guo?</h4>
+	<input type="range" min="1" max="10" id="range3" class="tony">
+</div>
+
+
+<br>
+<br>
+You like school <span id="output1"></span>/10, this class <span id="output2"></span>/10 and Tony Guo <span id="output3"></span>/10.
+
+
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(initialize);
+$("#range1").on("change",doR1)
+$("#range2").on("change",doR2)
+$("#range3").on("change",doR3)
+
+
+function initialize() {
+	$("#output1").html(5);
+
+}
+
+function doR1(evt) {
+	var value = evt.target.value;
+	$("#output1").html(value);
+}
+
+function doR2(evt) {
+	var value = evt.target.value;
+	$("#output2").html(value);
+}
+
+function doR3(evt) {
+	var value = evt.target.value;
+	$("#output3").html(value);
+}
+
+
+
+
+
+</script>

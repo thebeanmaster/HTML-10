@@ -1,0 +1,175 @@
+<head>
+<style>
+	h1 {
+		text-align: center;
+		color: turquoise;
+	}
+	
+	h2 {
+		color: turquoise;
+	}
+	
+	h3 {
+		color: turquoise;
+	}
+	
+	body {
+		color: turquoise;
+		background-color: #ff66cc;
+	}
+	
+	.yeet {
+		width: 90%;
+		border: 1px solid turquoise;
+	}
+
+	hr {
+		color: turquoise;
+	} 
+	
+	
+</style>
+</head>
+<body>
+
+<div id="form">
+
+	<h1>Eric's Coolio Gym</h1>
+	<h2>Before you fill out the form, please fill out the following information</h2>
+	<div class="yeet">
+		<h3>What is your age?</h3>
+		<input type="range" min="10" max="65" id="ageRange">
+		<span id="output">
+		</span>
+	</div>
+	<div class="yeet">
+	<h3>On a scale of 1-10, how comfortable are you with working out?</h3>
+		<input type="range" min="1" max="10" id="workRange">
+		<span id="output2">
+		</span>
+	</div>
+
+	
+	
+	
+	<h2>Please Select Your Membership Option</h2>
+	Basic Membership <input type="checkbox" id='box1' value='Basic Membership'><br>
+	Advanced Membership <input type="checkbox" id='box2' value='Advanced Membership'><br>
+	Extreme Membership <input type="checkbox" id='box3' value='Extreme Membership'>
+	<h2>Select All Training Items You Wish To Use</h2>
+	Weights <input type="checkbox" id='box4' value='Weights'><br>
+	Treadmill <input type="checkbox" id='box5' value='Treadmill'><br>
+	Rowing Machine <input type="checkbox" id='box6' value='Rowing Machine'><br>
+	Elyptical <input type="checkbox" id='box7' value='Elyptical'><br>
+<hr>
+<button id="submit">Submit</button>
+<h2>Your Selected Choices Are:</h2>
+
+	</div>
+</body>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+
+//$("input#box1,input#box2,input#box3").on("click", memClicked)
+//$("input#box4,input#box5,input#box6,input#box7").on("click", macClicked)
+document.getElementById("submit").addEventListener("click",Submit);
+
+
+
+
+//function memClicked(evt) {
+	//var inpName = evt.target.id;
+//	var element = evt.target;
+   //if ($("input[id="+inpName+"]").prop("checked") )
+  //    		$("#msgBox").append("You have selected " + element.value + "<br>")
+  //    	else
+ //     		$("#msgBox").html("")
+//}
+//function macClicked(evt) {
+//	var inpName = evt.target.id;
+//	var element = evt.target;
+ //  if ($("input[id="+inpName+"]").prop("checked") )
+  //    		$("#msgBox2").append("You have selected " + element.value + "<br>")
+ //     	else
+ //     		$("#msgBox2").html("")
+//}
+
+function Submit() {
+
+
+
+   if  ($("input[id=box1]").prop("checked") )
+      		$("#form").append("You have selected " + box1.value + "<br>")
+      	else
+      		$("#form").append("")
+			
+   if  ($("input[id=box2]").prop("checked") )
+      		$("#form").append("You have selected " + box2.value + "<br>")
+      	else
+      		$("#form").append("")
+			
+   if  ($("input[id=box3]").prop("checked") )
+      		$("#form").apppend("You have selected " + box3.value + "<br>")
+      	else
+      		$("#form").append("")
+			
+   if  ($("input[id=box4]").prop("checked") )
+      		$("#form").append("You have selected " + box4.value + "<br>")
+      	else
+      		$("#form").append("")
+			
+   if  ($("input[id=box5]").prop("checked") )
+      		$("#form").append("You have selected " + box5.value + "<br>")
+      	else
+      		$("#form").append("")	
+			
+   if  ($("input[id=box6]").prop("checked") )
+      		$("#form").append("You have selected " + box6.value + "<br>")
+      	else
+      		$("#form").append("")	
+			
+   if  ($("input[id=box7]").prop("checked") )
+      		$("#form").append("You have selected " + box7.value + "<br>")
+      	else
+      		$("#form").append("")					
+			
+}
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(initialize);
+$("#ageRange").on("change",doAge)
+$("#workRange").on("change",doWork)
+
+function initialize() {
+	$("#output").html(25);
+	$("#output2").html(5);
+}
+
+function doAge(evt) {
+	var value = evt.target.value;
+  $("#output").html(value);
+}
+ 
+function doWork(evt) {
+	var value = evt.target.value;
+  $("#output2").html(value);
+}
+</script>

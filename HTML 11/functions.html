@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<button id="target">Do</button>
+<div id="Equal">
+</div>
+ Username: <input type="text" name="user" id="user"><br>
+  Password: <input type="password" name="pwd"><br>
+  <input type="submit" id="target2">
+<div id="output2">
+</div>
+  
+  
+</body>
+<script>
+function doTarget() {
+
+	var a;
+	a = prompt("Enter a number");
+	var b = parseInt(a);
+	var c = Math.ceil(Math.random() * 100);
+	
+	
+	
+	if (b == c) {
+	document.getElementById("Equal").innerHTML = b + " is equal to " + c + "<br>";
+    }
+	else { 
+    document.getElementById("Equal").innerHTML = b + " is not equal to " + c + "<br>";
+	}
+}
+function doTarget2() { 
+var username = "hi";
+var password = "bye";
+
+if (user == username){
+document.getElementById("output2").innerHTML = "HI";
+}
+}
+
+document.getElementById("target").addEventListener("click",doTarget);
+document.getElementById("target2").addEventListener("click",doTarget2);
+</script>
+

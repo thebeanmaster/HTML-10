@@ -1,0 +1,61 @@
+<html>
+<head>
+
+</head>
+<body>
+<button id="pasta">
+Login
+</button>
+<button id="lemonade">
+Logout
+</button>
+<br>
+You are <span id="log">logged in as:</span> <span id="use">
+</span>
+<br>
+Password: <span id="pass">
+</span>
+
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+
+
+function alfredoSauce() {
+var username = prompt("Enter Username");
+
+var password = prompt("Enter Password");
+
+
+localStorage.setItem("Username",username);
+
+localStorage.setItem("Password",password);
+location.reload();
+}
+
+number = localStorage.getItem("Username");
+document.getElementById("use").innerHTML = number;
+
+letter = localStorage.getItem("Password");
+document.getElementById("pass").innerHTML = letter;
+
+function sugasuga() {
+document.getElementById("use").innerHTML = "";
+document.getElementById("pass").innerHTML = "";
+document.getElementById("log").innerHTML = "not logged in";
+localStorage.clear();
+}
+
+
+
+document.getElementById("pasta").addEventListener("click",alfredoSauce);
+document.getElementById("lemonade").addEventListener("click",sugasuga);
+</script>
